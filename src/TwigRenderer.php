@@ -5,10 +5,15 @@ namespace Simplified\TwigBridge;
 use Simplified\Core\ViewRendererInterface;
 
 class TwigRenderer implements ViewRendererInterface {
-	public function render($template, $data = array()) {
-		$loader = new \Twig_Loader_Filesystem('/path/to/templates');
-		$twig = new \Twig_Environment($loader, array(
-				'cache' => '/path/to/compilation_cache',
+	private $twig;
+	public function __construct() {
+		$loader = new \Twig_Loader_Filesystem(RESOURCES_PATH . 'views/templates');
+		$this->twig = new \Twig_Environment($loader, array(
+				'cache' => APP_PATH . 'cache',
 		));
+	}
+	
+	public function render($template, $data = array()) {
+		$this->twig->render($teplate, $data);
 	}
 }
