@@ -14,6 +14,6 @@ class TwigRenderer implements ViewRendererInterface {
 	}
 	
 	public function render($template, $data = array()) {
-		$this->twig->render($teplate, $data);
+		$this->twig->render($template, $data);
 	}
 }
