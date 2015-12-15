@@ -1,0 +1,17 @@
+{
+    "name": "simplified/twigbridge",
+    "description": "Simplified twigbridge module",
+    "authors": [
+        {
+            "name": "Andreas Bratfisch",
+            "email": "duskman72@gmail.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+		    "Simplified\\TwigBridge\\":"src/"
+        }
+    }
+}
