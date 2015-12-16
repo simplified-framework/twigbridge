@@ -22,4 +22,5 @@ class TwigRenderer implements ViewRendererInterface {
 		$value = $this->twig->render($template, $data);
 		return $value;
 	}
+	
 }
