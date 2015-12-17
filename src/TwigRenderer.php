@@ -2,18 +2,25 @@
 
 
 namespace Simplified\TwigBridge;
+use Simplified\Config\Config;
 use Simplified\Core\ViewRendererInterface;
 
 class TwigRenderer implements ViewRendererInterface {
 	private $twig;
 	public function __construct() {
-		
-		// TODO load config: set views and cache path from config
-		// set file extension from config
-		
-		$loader = new \Twig_Loader_Filesystem(RESOURCES_PATH . 'views');
+
+		$userConf = Config::getAll('twig');
+		$defaultConf = [
+			'template_path' => RESOURCES_PATH . 'views',
+			'cache_path' => APP_PATH . 'cache',
+			'use_cache' => true
+		];
+
+		$config = array_merge($defaultConf, $userConf);
+
+		$loader = new \Twig_Loader_Filesystem($config['template_path']);
 		$this->twig = new \Twig_Environment($loader, array(
-				'cache' => APP_PATH . 'cache',
+				'cache' => $config['use_cache'] ? APP_PATH . 'cache' : false,
 				"auto_reload" =>  true,
 		));
 	}
