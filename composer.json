@@ -1,6 +1,7 @@
 {
     "name": "simplified/twigbridge",
     "description": "Simplified twigbridge module",
+    "license":"MIT",
     "authors": [
         {
             "name": "Andreas Bratfisch",
