@@ -1,6 +1,7 @@
 {
     "name": "simplified/twigbridge",
     "description": "Simplified twigbridge module",
+    "license":"MIT",
     "authors": [
         {
             "name": "Andreas Bratfisch",
@@ -13,11 +14,6 @@
     "autoload": {
         "psr-4": {
 		    "Simplified\\TwigBridge\\":"src/"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.1-dev"
         }
     },
     "minimum-stability": "dev"
