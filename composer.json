@@ -1,6 +1,8 @@
 {
     "name": "simplified/twigbridge",
     "description": "Simplified twigbridge module",
+    "license":"MIT",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Andreas Bratfisch",
@@ -15,5 +17,6 @@
         "psr-4": {
 		    "Simplified\\TwigBridge\\":"src/"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
