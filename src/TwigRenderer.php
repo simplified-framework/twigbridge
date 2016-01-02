@@ -3,7 +3,7 @@
 
 namespace Simplified\TwigBridge;
 use Simplified\Config\Config;
-use Simplified\Core\ViewRendererInterface;
+use Simplified\View\ViewRendererInterface;
 
 class TwigRenderer implements ViewRendererInterface {
 	private $twig;
