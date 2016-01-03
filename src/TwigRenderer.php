@@ -31,7 +31,7 @@ class TwigRenderer implements ViewRendererInterface {
 	}
 	
 	public function render($template, $data = array()) {
-		$value = $this->twig->render($template, $data);
+		$value = $this->twig->render($template.".twig", $data);
 		return $value;
 	}
 
