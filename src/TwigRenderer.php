@@ -32,7 +32,12 @@ class TwigRenderer implements ViewRendererInterface {
 	}
 	
 	public function render($template, $data = array()) {
-		$value = $this->twig->render($template.".twig", $data);
+		$template = strstr($template, ".twig") !== false ||
+			strstr($template, ".html") !== false ||
+			strstr($template, ".tpl") !== false ?
+				$template : $template . ".twig";
+
+		$value = $this->twig->render($template, $data);
 		return $value;
 	}
 
